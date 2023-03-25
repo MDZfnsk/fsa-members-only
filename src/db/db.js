@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 
-const DB_NAME = 'my-database';
+const DB_NAME = 'fsa-members-only';
 
 export const db = {
     _dbClient: null,
@@ -8,6 +8,7 @@ export const db = {
         const client = await MongoClient.connect(url,{
             maxPoolSize: 10,
             useNewUrlParser: true,
+           
         });
         this._dbClient = client;
     },
