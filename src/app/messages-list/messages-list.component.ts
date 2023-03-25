@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Message } from '../types';
 
 @Component({
   selector: 'app-messages-list',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class MessagesListComponent {
 
+  @Input() messages: Message[] = [];
+ 
 }

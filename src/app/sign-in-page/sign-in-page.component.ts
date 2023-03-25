@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { CONSTANTS } from '@firebase/util';
 
 @Component({
   selector: 'app-sign-in-page',
   templateUrl: './sign-in-page.component.html',
   styleUrls: ['./sign-in-page.component.css']
 })
-export class SignInPageComponent {
+export class SignInPageComponent implements OnInit {
 
   errorMessage = '';
   emailValue = '';
@@ -18,6 +19,21 @@ export class SignInPageComponent {
     private router: Router,
     private auth: AngularFireAuth,
   ) { }
+
+  ngOnInit(): void {
+    //Used for understanding purposes
+    // this.auth.user.subscribe(user => {
+    //   if(user){
+    //     console.log("Yes");
+
+    //   }
+    //   else{
+    //     console.log("No");
+    //   }
+    // }
+    //   )
+   
+  }
 
   onClickSignIn(): void {
     this.errorMessage = '';
